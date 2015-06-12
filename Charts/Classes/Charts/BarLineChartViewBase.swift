@@ -872,7 +872,7 @@ public class BarLineChartViewBase: ChartViewBase, UIGestureRecognizerDelegate
             
             if (foundScrollView !== nil)
             {
-                for scrollRecognizer in foundScrollView!.gestureRecognizers as! [UIGestureRecognizer]
+                for scrollRecognizer in foundScrollView!.gestureRecognizers!
                 {
                     if (scrollRecognizer.isKindOfClass(UIPanGestureRecognizer))
                     {

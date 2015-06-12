@@ -14,7 +14,7 @@
 
 import Foundation
 
-public class ChartDataEntry: NSObject, Equatable
+public class ChartDataEntry: NSObject
 {
     /// the actual value (y axis)
     public var value = Double(0.0)
