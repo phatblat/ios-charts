@@ -90,7 +90,7 @@ public class ChartDataEntry: NSObject, Equatable
     
     public func copyWithZone(zone: NSZone) -> AnyObject
     {
-        var copy = self.dynamicType.allocWithZone(zone) as ChartDataEntry;
+        let copy = self.dynamicType.allocWithZone(zone) as ChartDataEntry;
         copy.value = value;
         copy.xIndex = xIndex;
         copy.data = data;
