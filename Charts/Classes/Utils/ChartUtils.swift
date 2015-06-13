@@ -118,7 +118,7 @@ internal class ChartUtils
         );
     }
     
-    internal class func drawText(context context: CGContext, text: String, var point: CGPoint, align: NSTextAlignment, attributes: [NSObject : AnyObject]?)
+    internal class func drawText(context context: CGContext, text: String, var point: CGPoint, align: NSTextAlignment, attributes: [String : AnyObject]?)
     {
         if (align == .Center)
         {
@@ -134,7 +134,7 @@ internal class ChartUtils
         UIGraphicsPopContext();
     }
     
-    internal class func drawMultilineText(context context: CGContext, text: String, var knownTextSize: CGSize, point: CGPoint, align: NSTextAlignment, attributes: [NSObject : AnyObject]?, constrainedToSize: CGSize)
+    internal class func drawMultilineText(context context: CGContext, text: String, knownTextSize: CGSize, point: CGPoint, align: NSTextAlignment, attributes: [String : AnyObject]?, constrainedToSize: CGSize)
     {
         var rect = CGRect(origin: CGPoint(), size: knownTextSize);
         rect.origin.x += point.x;
@@ -154,9 +154,9 @@ internal class ChartUtils
         UIGraphicsPopContext();
     }
     
-    internal class func drawMultilineText(context context: CGContext, text: String, point: CGPoint, align: NSTextAlignment, attributes: [NSObject : AnyObject]?, constrainedToSize: CGSize)
+    internal class func drawMultilineText(context context: CGContext, text: String, point: CGPoint, align: NSTextAlignment, attributes: [String : AnyObject]?, constrainedToSize: CGSize)
     {
-        var rect = text.boundingRectWithSize(constrainedToSize, options: .UsesLineFragmentOrigin, attributes: attributes, context: nil);
+        let rect = text.boundingRectWithSize(constrainedToSize, options: .UsesLineFragmentOrigin, attributes: attributes, context: nil);
         drawMultilineText(context: context, text: text, knownTextSize: rect.size, point: point, align: align, attributes: attributes, constrainedToSize: constrainedToSize);
     }
     

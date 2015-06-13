@@ -326,7 +326,7 @@ public class ChartViewBase: UIView, ChartAnimatorDelegate
         
         let frame = self.bounds;
         
-        var attrs = [NSObject: AnyObject]();
+        var attrs = [String: AnyObject]();
         
         var font = descriptionFont;
         
